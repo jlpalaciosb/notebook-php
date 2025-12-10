@@ -82,11 +82,8 @@
 			var year = ymd.substr(0,4);
 			var month = ymd.substr(5,2);
 			var day = ymd.substr(8,2);
-			return day + " - " + months[parseInt(month)-1] + " - " + year;
+			return day + " / " + months[parseInt(month)-1] + " / " + year;
 		}
-		$(document).ready(function(){
-			
-		});
 	</script>
 </head>
 <body>
