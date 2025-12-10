@@ -26,7 +26,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Diario App Login</title>
+	<title>Login - Anotador</title>
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" type="image/png" href="/assets/img/diarioapp.png"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
