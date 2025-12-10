@@ -39,7 +39,6 @@
 		var modal_body1 = '<p>Eliminando</p><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
 		var modal_body2 = '<p>Eliminado</p>';
 		var modal_footer0 = '<button type="button" class="btn btn-danger" onclick="eliminar()">Sí</button> <button type="button" class="btn btn-default" data-dismiss="modal">No</button>';
-		var modal_footer1 = '';
 		var modal_footer2 = '<button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>';
 		var navbar;
 		var sticky;
@@ -50,7 +49,7 @@
 		}
 		function eliminar() {
 			$("#modal-body").html(modal_body1);
-			$("#modal-footer").html(modal_footer1);
+			$("#modal-footer").addClass('hide');
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (this.readyState === 4) {
@@ -66,7 +65,7 @@
 		}
 		async function eliminado() {
 			$("#modal-body").html(modal_body2);
-			$("#modal-footer").html(modal_footer2);
+			$("#modal-footer").removeClass('hide').html(modal_footer2);
 			var content = '';
 			content += '<td>';
 			content +=     legibleYMD(a_eliminar);
@@ -140,13 +139,13 @@
 		<div class="modal fade" id="myModal" role="dialog">
 			<div class="modal-dialog">
 				<!-- Modal content-->
-				<div class="modal-content" style="background-color: lightgrey; padding: 10px 0px 5px 0px; border-radius: 5px;">
-					<div class="modal-header" style="background-color: lightgrey;">
+				<div class="modal-content">
+					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<h4 class="modal-title">Eliminar notas de esta fecha</h4>
 					</div>
-					<div class="modal-body" id="modal-body" style="background-color: grey;color: white;"></div>
-					<div class="modal-footer" id="modal-footer" style="background-color: lightgrey;"></div>
+					<div class="modal-body" id="modal-body"></div>
+					<div class="modal-footer" id="modal-footer"></div>
 				</div>
 			</div>
 		</div>

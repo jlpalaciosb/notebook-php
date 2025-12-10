@@ -42,3 +42,22 @@ body {
 .margintop {
 	margin-top: 5px;
 }
+
+.modal-content {
+	background-color: #55959c;
+	padding: 8px 0px 0px 0px;
+	border-radius: 5px;
+}
+
+.modal-header, .modal-body {
+	color: white;
+}
+
+.modal-header {
+	border-bottom: none;
+}
+
+.modal-footer {
+	border-top: none;
+	background-color: rgba(256,256,256,0.2);
+}
