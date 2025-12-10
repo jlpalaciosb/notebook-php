@@ -50,7 +50,9 @@
 					<input required class="form-control" type="password" name="password" placeholder="Ingresa tu contraseña">
 				</div>
 				<p class="error"><?php echo $error; ?></p>
-				<center><button type="submit" class="btn btn-primary">Iniciar Sesión</button></center>
+				<div class="d-flex justify-content-center">
+					<button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+				</div>
 				<p style="text-align: right;margin-top: 15px;margin-bottom: 0px;"><a href="/user/register.php">Crear Cuenta</a></p>
 			</form>
 

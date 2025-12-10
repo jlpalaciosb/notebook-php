@@ -67,7 +67,9 @@
 					<input required class="form-control" type="password" name="password_confirm" placeholder="Confirma tu contraseña">
 				</div>
 				<p class="error"><?php echo $error; ?></p>
-				<center><button type="submit" class="btn btn-primary">Crear Cuenta</button></center>
+				<div class="d-flex justify-content-center">
+					<button type="submit" class="btn btn-primary">Crear Cuenta</button>
+				</div>
 				<p style="text-align: right;margin-top: 15px;margin-bottom: 0px;"><a href="/user/login.php">Iniciar Sesión</a></p>
 			</form>
 

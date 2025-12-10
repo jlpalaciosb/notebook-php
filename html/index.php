@@ -90,23 +90,25 @@
 	</script>
 </head>
 <body>
-	<div class="container" style="">
+	<div class="container">
 		<!--Encabezado?-->
 		<?php include(TEMPLATES_PATH . '/encabezado.php'); ?>
 
 		<!--Navegador de Meses-->
-		<center><div class="cuadro" style="text-align: center; max-width: 350px; margin-top: 15px;">
-			<a class="btn btn-default" href="/index.php?date=<?php echo mes_anterior($_GET['date'])?>" style="width: 60px;">
-				<?php echo substr($GLOBALS['meses'][intval(substr(mes_anterior($_GET['date']), 5)) - 1], 0 , 3) ?>
-			</a>
-			<label style="margin-left: 10px; margin-right: 10px;">
-				<b><?php echo legible_YM($_GET['date']) ?></b>		
-			</label>
-			<a class="btn btn-default" href="/index.php?date=<?php echo mes_siguiente($_GET['date'])?>" style="width: 60px;">
-				<?php echo substr($GLOBALS["meses"][intval(substr(mes_siguiente($_GET['date']), 5)) - 1], 0 , 3) ?>
-			</a>
-		</div></center>
-		<!--Fin del Complejo Navegador de Meses, ok no->
+		<div class="d-flex justify-content-center">
+			<div class="cuadro" style="text-align: center; max-width: 350px; margin-top: 15px;">
+				<a class="btn btn-default" href="/index.php?date=<?php echo mes_anterior($_GET['date'])?>" style="width: 60px; margin-left: 10px;">
+					<?php echo substr($GLOBALS['meses'][intval(substr(mes_anterior($_GET['date']), 5)) - 1], 0 , 3) ?>
+				</a>
+				<label style="margin-left: 10px; margin-right: 10px;">
+					<b><?php echo legible_YM($_GET['date']) ?></b>		
+				</label>
+				<a class="btn btn-default" href="/index.php?date=<?php echo mes_siguiente($_GET['date'])?>" style="width: 60px; margin-right: 10px;">
+					<?php echo substr($GLOBALS["meses"][intval(substr(mes_siguiente($_GET['date']), 5)) - 1], 0 , 3) ?>
+				</a>
+			</div>
+		</div>
+		<!--Fin del Complejo Navegador de Meses, ok no-->
 
 		<!--Título de la lista-->
 		<div id="listTitle">
