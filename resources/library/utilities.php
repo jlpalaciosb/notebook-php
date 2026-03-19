@@ -122,3 +122,36 @@ function encrypt($content, $key) {
 function decrypt($crypted, $key) {
 	return openssl_decrypt($crypted, 'AES-128-CBC', $key, 0, '0000000000000000');
 }
+
+# Carga variables de entorno desde archivo .env
+# Si se pasa $variable, retorna su valor o el valor por defecto si no existe
+function obtener_env($variable = null, $default = null) {
+	static $env_cargado = false;
+
+	if (!$env_cargado) {
+		$env_file = realpath(dirname(__FILE__) . '/../../.env');
+		if (file_exists($env_file)) {
+			$lines = file($env_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+			foreach ($lines as $line) {
+				# Ignorar comentarios y líneas sin =
+				if (strpos($line, '#') === 0 || strpos($line, '=') === false) {
+					continue;
+				}
+				list($key, $value) = explode('=', $line, 2);
+				$key = trim($key);
+				$value = trim($value);
+				# Remover comillas si existen
+				$value = trim($value, '\'"');
+				putenv($key . '=' . $value);
+			}
+		}
+		$env_cargado = true;
+	}
+
+	if ($variable !== null) {
+		$value = getenv($variable);
+		return $value !== false ? $value : $default;
+	} else {
+		return null;
+	}
+}
