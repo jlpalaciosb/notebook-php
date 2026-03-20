@@ -40,4 +40,4 @@ Customize ports and database password by creating a `.env` file or setting varia
 
 * [PHP 7](https://hub.docker.com/_/php)
 * [PostgreSQL 9](https://hub.docker.com/_/postgres)
-* [Apache 2](https://hub.docker.com/_/php)
+* [Apache 2.4](https://hub.docker.com/_/php)

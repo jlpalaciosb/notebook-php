@@ -7,14 +7,6 @@
 	margin-top: 5px;
 }
 
-#ta:focus {
-	
-}
-
-.edit-btn {
-	/*animation: 2s mymove infinite;*/
-}
-
 @keyframes mymove {
 	50% {box-shadow: 0 0 15px red;}
 }
