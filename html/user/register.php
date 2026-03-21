@@ -37,46 +37,85 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="es" class="h-100">
+<html lang="es">
 <head>
-    <title>Registro - Anotador</title>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/png" href="/assets/img/diarioapp.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro - Anotador</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/img/diarioapp.png"/>
 
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.7/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-5.3.8/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/app_v2.css">
 </head>
-<body class="h-100">
-    <div class="container d-flex align-items-center min-h-100" style="max-width: 400px;">
-        <div class="form-container w-100">
-            <img src="/assets/img/diarioapp2.png" alt="Logo"
-            style="margin-bottom: 5px; height: 60px;">
-            <form class="cuadro" method="post" action="/user/register.php">
-                <h2 class="text-center mt-2">Crea una cuenta</h2>
-                <div class="form-group">
-                    <label for="new_user">Nombre de Usuario</label>
-                    <input required class="form-control" type="text" name="user" placeholder="Elige un nombre de usuario" value="<?php echo $user ?>" autofocus>
-                </div>
-                <div class="form-group">
-                    <label for="pass">Contraseña</label>
-                    <input required class="form-control" type="password" name="password" placeholder="Ingresa una contraseña">
-                </div>
-                <div class="form-group">
-                    <label for="pass_conf">Confirmar</label>
-                    <input required class="form-control" type="password" name="password_confirm" placeholder="Confirma tu contraseña">
-                </div>
-                <p class="error"><?php echo $error; ?></p>
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary">Crear Cuenta</button>
-                </div>
-                <p style="text-align: right;margin-top: 15px;margin-bottom: 0px;"><a href="/user/login.php">Iniciar Sesión</a></p>
-            </form>
+<body class="d-flex align-items-center py-4 min-vh-100">
 
-            <div style="margin-top: 10px;"></div>
-            <!--Footer-->
-            <?php include_once BASE_PATH . '/templates/footer.php'; ?>
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-9 col-md-7 col-lg-5 col-xl-4">
+
+                <div class="text-center mb-4">
+                    <img src="/assets/img/diarioapp2.png" alt="Logo" style="height: 70px;">
+                </div>
+
+                <div class="card login-card">
+                    <div class="card-body p-4 p-sm-5">
+                        <h2 class="text-center fw-bold mb-4">Crea una cuenta</h2>
+
+                        <form method="post" action="/user/register.php">
+                            <div class="mb-3">
+                                <label for="new_user" class="form-label">Nombre de Usuario</label>
+                                <input type="text" name="user" id="new_user"
+                                       class="form-control form-control-lg"
+                                       placeholder="Elige un nombre de usuario"
+                                       value="<?php echo $user; ?>"
+                                       autofocus required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="pass" class="form-label">Contraseña</label>
+                                <input type="password" name="password" id="pass"
+                                       class="form-control form-control-lg"
+                                       placeholder="Ingresa una contraseña"
+                                       required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="pass_conf" class="form-label">Confirmar Contraseña</label>
+                                <input type="password" name="password_confirm" id="pass_conf"
+                                       class="form-control form-control-lg"
+                                       placeholder="Repite tu contraseña"
+                                       required>
+                            </div>
+
+                            <?php if ($error) { ?>
+                                <div class="error-text mb-3 text-center">
+                                    <?php echo $error; ?>
+                                </div>
+                            <?php } ?>
+
+                            <div class="d-grid gap-2 mt-4">
+                                <button type="submit" class="btn btn-primary btn-lg">Crear Cuenta</button>
+                            </div>
+                        </form>
+
+                        <hr class="my-4">
+
+                        <div class="text-center">
+                            <p class="mb-0 text-muted">¿Ya tienes cuenta?
+                                <a href="/user/login.php" class="text-decoration-none fw-bold">Iniciar Sesión</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="mt-4 text-center text-muted">
+                    <?php include_once BASE_PATH . '/templates/footer.php'; ?>
+                </footer>
+
+            </div>
         </div>
-    </div>
+    </main>
+
+    <script src="/assets/bootstrap-5.3.8/js/bootstrap.min.js"></script>
 </body>
 </html>
