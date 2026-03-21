@@ -37,13 +37,10 @@
         // Modal strings actualizados para B5 (d-none, data-bs-dismiss, text-end, btn-sm)
         var modal_body0 = '<p class="text-center fs-5">¿Seguro que quieres eliminar tus notas del <br><strong id="span"></strong>?</p>';
         var modal_body1 = '<div class="text-center fs-4"><div class="spinner-border" role="status"><span class="visually-hidden">Cargando...</span></div><p class="mt-2">Eliminando...</p></div>';
-        var modal_body2 = '<p class="text-center fs-4 text-success">Eliminado!</p>';
+        var modal_body2 = '<p class="text-center fs-4">Eliminado!</p>';
         var modal_footer0 = '<button type="button" class="btn btn-danger px-4" onclick="eliminar()">Sí</button> <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">No</button>';
         var modal_footer2 = '<button type="button" class="btn btn-success px-4" data-bs-dismiss="modal">Ok</button>';
 
-        var navbar;
-        var sticky;
-        
         function on_show_modal() {
             $("#modal-body").html(modal_body0);
             $("#span").html(legibleYMD(a_eliminar));

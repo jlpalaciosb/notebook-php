@@ -6,6 +6,10 @@ body {
 	background-size: cover;
 }
 
+.logo-img {
+	height: 70px;
+}
+
 .login-card {
     border: none;
     border-radius: 1rem;

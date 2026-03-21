@@ -54,8 +54,8 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6">
 
-                <div class="text-center mb-4">
-                    <img src="/assets/img/diarioapp2.png" alt="Logo" style="height: 70px;">
+                <div class="mb-4">
+                    <?php require_once BASE_PATH . '/templates/logo.php' ?>
                 </div>
 
                 <div class="card login-card">
