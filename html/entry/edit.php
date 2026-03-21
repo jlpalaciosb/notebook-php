@@ -77,8 +77,9 @@
 
 <?php
     function hacerEnGet() {
+        global $content;
         if (isset($_GET['date']) && !empty($_GET['date']) && !formatErrorYMD($_GET['date'])) {
-            $stmt = $GLOBALS['connection']->prepare('SELECT * FROM entries WHERE date=:d AND owner=:o');
+            $stmt = db()->prepare('SELECT * FROM entries WHERE date=:d AND owner=:o');
             $stmt->bindParam(':d', $_GET['date']);
             $stmt->bindParam(':o', $_SESSION['user']);
             $stmt->execute();
@@ -88,7 +89,7 @@
                 include_once BASE_PATH . '/templates/404.php';
                 exit();
             }
-            $GLOBALS['content'] = decrypt($result[0]['content'], $_SESSION['crypt_key']);
+            $content = decrypt($result[0]['content'], $_SESSION['crypt_key']);
         } else {
             http_response_code(400);
             include_once BASE_PATH . '/templates/400.php';
@@ -98,7 +99,7 @@
 
     function hacerEnPost() {
         if(isset($_POST['content']) && isset($_POST['date']) && !empty($_POST['date']) && !formatErrorYMD($_POST['date'])) {
-            $stmt = $GLOBALS['connection']->prepare('UPDATE entries SET content=:c WHERE date=:d AND owner=:o');
+            $stmt = db()->prepare('UPDATE entries SET content=:c WHERE date=:d AND owner=:o');
             $stmt->bindParam(':c', $_POST['content']);
             $stmt->bindParam(':d', $_POST['date']);
             $stmt->bindParam(':o', $_SESSION['user']);

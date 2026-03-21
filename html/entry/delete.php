@@ -8,7 +8,7 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
-$stmt = $GLOBALS['connection']->prepare('DELETE FROM entries WHERE date = :d AND owner=:o');
+$stmt = db()->prepare('DELETE FROM entries WHERE date = :d AND owner=:o');
 $stmt->bindParam(':d', $_GET['date']);
 $stmt->bindParam(':o', $_SESSION['user']);
 $stmt->execute();

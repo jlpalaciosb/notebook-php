@@ -15,7 +15,7 @@
         exit();
     }
 
-    $stmt = $GLOBALS['connection']->prepare('SELECT * FROM entries WHERE owner=:o AND date=:d');
+    $stmt = db()->prepare('SELECT * FROM entries WHERE owner=:o AND date=:d');
     $stmt->bindParam(':o', $_SESSION['user']);
     $stmt->bindParam(':d', $_GET['date']);
 

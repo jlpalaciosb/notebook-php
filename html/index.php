@@ -95,13 +95,13 @@
         <div class="d-flex justify-content-center">
             <div class="cuadro" style="text-align: center; max-width: 350px; margin-top: 15px;">
                 <a class="btn btn-default" href="/index.php?date=<?php echo mesAnterior($_GET['date'])?>" style="width: 60px; margin-left: 10px;">
-                    <?php echo substr($GLOBALS['meses'][intval(substr(mesAnterior($_GET['date']), 5)) - 1], 0 , 3) ?>
+                    <?php echo substr(CONSTANTS['meses'][intval(substr(mesAnterior($_GET['date']), 5)) - 1], 0 , 3) ?>
                 </a>
                 <span style="margin-left: 10px; margin-right: 10px;">
                     <b><?php echo legibleYM($_GET['date']) ?></b>
                 </span>
                 <a class="btn btn-default" href="/index.php?date=<?php echo mesSiguiente($_GET['date'])?>" style="width: 60px; margin-right: 10px;">
-                    <?php echo substr($GLOBALS["meses"][intval(substr(mesSiguiente($_GET['date']), 5)) - 1], 0 , 3) ?>
+                    <?php echo substr(CONSTANTS['meses'][intval(substr(mesSiguiente($_GET['date']), 5)) - 1], 0 , 3) ?>
                 </a>
             </div>
         </div>

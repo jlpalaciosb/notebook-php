@@ -1,11 +1,9 @@
 <?php
 
-$meses = array("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "setiembre", "octubre", "noviembre", "diciembre");
-
 #Recibe = YYYY-MM
 #Retorna = mes AÑO, ejemplo = mayo 2018
 function legibleYM ($year_month) {
-    return $GLOBALS["meses"][intval(substr($year_month, 5)) - 1] . " / " . substr($year_month, 0, 4);
+    return CONSTANTS['meses'][intval(substr($year_month, 5)) - 1] . " / " . substr($year_month, 0, 4);
 }
 
 #retorna la fecha en un formato más legible
@@ -15,7 +13,7 @@ function legibleYMD ($anho, $mes, $dia) {
         $str = $str . "0";
     }
     $str = $str . strval($dia) . " / ";
-    $str = $str . $GLOBALS["meses"][$mes - 1] . " / ";
+    $str = $str . CONSTANTS['meses'][$mes - 1] . " / ";
     $str = $str . strval($anho);
     return $str;
 }

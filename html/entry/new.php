@@ -16,7 +16,7 @@ if (!isset($_GET['date']) || empty($_GET['date']) || formatErrorYMD($_GET['date'
 }
 
 if (!existsEntry($_SESSION['user'], $_GET['date'])) {
-    $stmt = $GLOBALS['connection']->prepare('INSERT INTO entries (owner,date,content) VALUES (:o,:d,:c)');
+    $stmt = db()->prepare('INSERT INTO entries (owner,date,content) VALUES (:o,:d,:c)');
     $stmt->bindParam(':o', $_SESSION['user']);
     $stmt->bindParam(':d', $_GET['date']);
     $content = encrypt('', $_SESSION['crypt_key']);
