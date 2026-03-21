@@ -10,7 +10,7 @@
     }
 
     $content = '';
-    
+
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         hacerEnGet();
     } else {
@@ -21,59 +21,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Editar - Anotador</title>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/png" href="/assets/img/diarioapp.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editar - Anotador</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/img/diarioapp.png"/>
 
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-5.3.8/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
 
-    <script type="text/javascript" src="/assets/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="/assets/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/assets/autosize.min.js"></script>
-    
+    <script src="/assets/jquery-3.7.1.min.js"></script>
+    <script src="/assets/bootstrap-5.3.8/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/autosize.min.js"></script>
+
     <script>
         $(document).ready(function(){
-            autosize(document.querySelectorAll('textarea'));
-            
+            autosize($('textarea'));
+
             var searchInput = $('#ta');
-            // Multiply by 2 to ensure the cursor always ends up at the end;
-            // Opera sometimes sees a carriage return as 2 characters.
             var strLength = searchInput.val().length * 2;
             searchInput.focus();
             searchInput[0].setSelectionRange(strLength, strLength);
         });
 
-        // Enable navigation prompt
+        // Prevenir salida accidental
         window.onbeforeunload = function() {
-            return true;
+            return "Es posible que los cambios no se guarden";
         };
     </script>
 </head>
-<body>
-    <div class="container">
-        <!--Encabezado-->
+<body class="">
+    <div class="container py-4">
         <?php include_once BASE_PATH . '/templates/encabezado.php' ?>
 
-        <h1 class="text-white">
-            <?php echo legibleDate($_GET['date']) ?>
-        </h1>
-        <form class="cuadro" method="post" action="/entry/edit.php">
-            <input style="display:none;" type="text" name="date" value="<?php echo $_GET["date"]; ?>">
-            <div class="form-group">
-                <label for="content">Escribe tus notas</label>
-                <textarea id="ta" rows="4" name="content" class="form-control note-text-area"
-                ><?php echo $content ?></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">
-                Guardar
-            </button>
-        </form>
+        <main class="mt-4">
+            <div class="row justify-content-center">
+                <div class="col-12">
 
-        <!--Footer-->
-        <?php include_once BASE_PATH . '/templates/footer.php' ?>
+                    <h1 class="h2 mb-4 fw-bold text-white">
+                        <?php echo legibleDate($_GET['date']) ?>
+                    </h1>
+
+                    <div class="card login-card text-dark">
+                        <div class="card-body p-4">
+                            <form method="post" action="/entry/edit.php">
+                                <input type="hidden" name="date" value="<?php echo $_GET["date"]; ?>">
+
+                                <div class="mb-3">
+                                    <label for="ta" class="form-label fw-bold text-muted">Escribe tus notas</label>
+                                    <textarea id="ta" name="content"
+                                              class="form-control border-0 note-text-area fs-5"
+                                              rows="5"
+                                              style="resize: none; outline: none; box-shadow: none;"
+                                              placeholder="¿Qué tienes en mente?"><?php echo $content ?></textarea>
+                                </div>
+
+                                <div class="d-flex mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5 shadow"
+                                            onclick="window.onbeforeunload=null">
+                                        <i class="bi bi-floppy me-2"></i> Guardar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <footer class="mt-5">
+            <?php include_once BASE_PATH . '/templates/footer.php' ?>
+        </footer>
     </div>
+
 </body>
 </html>
 

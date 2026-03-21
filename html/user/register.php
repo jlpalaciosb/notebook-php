@@ -45,13 +45,14 @@
     <link rel="shortcut icon" type="image/png" href="/assets/img/diarioapp.png"/>
 
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-5.3.8/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/app_v2.css">
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
 </head>
 <body class="d-flex align-items-center py-4 min-vh-100">
 
     <main class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-sm-9 col-md-7 col-lg-5 col-xl-4">
+            <div class="col-12 col-md-8 col-lg-6">
 
                 <div class="text-center mb-4">
                     <img src="/assets/img/diarioapp2.png" alt="Logo" style="height: 70px;">
