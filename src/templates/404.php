@@ -1,11 +1,11 @@
 <?php
-require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/resources/config.php';
+    require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/src/bootstrap.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Bad Request</title>
+    <title>Not found</title>
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/png" href="/assets/img/diarioapp.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,12 +15,12 @@ require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/resources/config.ph
 </head>
 <body>
     <div class="container">
-        <?php include_once TEMPLATES_PATH . '/encabezado.php' ?>
+        <?php include_once BASE_PATH . '/templates/encabezado.php' ?>
         <div class="cuadro">
             <p class="error margintop">Error!</p>
-            <p>Bad Request</p>
+            <p>Not found</p>
         </div>
-        <?php include_once TEMPLATES_PATH . '/footer.php' ?>
+        <?php include_once BASE_PATH . '/templates/footer.php' ?>
     </div>
 </body>
 </html>

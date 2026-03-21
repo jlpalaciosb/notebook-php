@@ -1,7 +1,7 @@
 <?php
-require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/resources/config.php';
-require_once LIBRARY_PATH . '/database.php';
-require_once LIBRARY_PATH . '/utilities.php';
+require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/src/bootstrap.php';
+require_once BASE_PATH . '/lib/database.php';
+require_once BASE_PATH . '/lib/utilities.php';
 
 session_start();
 if (!isset($_SESSION['user'])) {
@@ -11,7 +11,7 @@ if (!isset($_SESSION['user'])) {
 
 if (!isset($_GET['date']) || empty($_GET['date']) || formatErrorYMD($_GET['date'])) {
     http_response_code(400);
-    include_once TEMPLATES_PATH . '/400.php';
+    include_once BASE_PATH . '/templates/400.php';
     exit();
 }
 

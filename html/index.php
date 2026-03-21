@@ -1,7 +1,7 @@
 <?php
-    require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/resources/config.php';
-    require_once LIBRARY_PATH . '/database.php';
-    require_once LIBRARY_PATH . '/utilities.php';
+    require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/src/bootstrap.php';
+    require_once BASE_PATH . '/lib/database.php';
+    require_once BASE_PATH . '/lib/utilities.php';
 
     session_start();
     if (!isset($_SESSION['user'])) {
@@ -88,8 +88,8 @@
 </head>
 <body>
     <div class="container">
-        <!--Encabezado?-->
-        <?php include_once TEMPLATES_PATH . '/encabezado.php'; ?>
+        <!--Encabezado-->
+        <?php include_once BASE_PATH . '/templates/encabezado.php'; ?>
 
         <!--Navegador de Meses-->
         <div class="d-flex justify-content-center">
@@ -156,7 +156,7 @@
         </div>
 
         <!--Footer-->
-        <?php include_once TEMPLATES_PATH . '/footer.php'; ?>
+        <?php include_once BASE_PATH . '/templates/footer.php'; ?>
     </div>
 </body>
 </html>

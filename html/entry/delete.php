@@ -1,6 +1,6 @@
 <?php
-require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/resources/config.php';
-require_once LIBRARY_PATH . '/database.php';
+require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/src/bootstrap.php';
+require_once BASE_PATH . '/lib/database.php';
 
 session_start();
 if (!isset($_SESSION['user'])) {

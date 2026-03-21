@@ -1,6 +1,6 @@
 <?php
-    require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/resources/config.php';
-    require_once LIBRARY_PATH . '/database.php';
+    require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/src/bootstrap.php';
+    require_once BASE_PATH . '/lib/database.php';
 
     session_start();
 
@@ -58,7 +58,7 @@
 
             <div style="margin-top: 10px;"></div>
             <!--Footer-->
-            <?php include_once TEMPLATES_PATH . '/footer.php'; ?>
+            <?php include_once BASE_PATH . '/templates/footer.php'; ?>
         </div>
     </div>
 </body>

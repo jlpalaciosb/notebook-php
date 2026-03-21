@@ -1,7 +1,7 @@
 <?php
-    require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/resources/config.php';
-    require_once LIBRARY_PATH . '/database.php';
-    require_once LIBRARY_PATH . '/utilities.php';
+    require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/src/bootstrap.php';
+    require_once BASE_PATH . '/lib/database.php';
+    require_once BASE_PATH . '/lib/utilities.php';
 
     session_start();
     if (!isset($_SESSION['user'])) {
@@ -55,7 +55,7 @@
 <body>
     <div class="container">
         <!--Encabezado-->
-        <?php include_once TEMPLATES_PATH . '/encabezado.php' ?>
+        <?php include_once BASE_PATH . '/templates/encabezado.php' ?>
 
         <h1 class="outside">
             <?php echo legibleDate($_GET['date']) ?>
@@ -70,7 +70,7 @@
         </form>
 
         <!--Footer-->
-        <?php include_once TEMPLATES_PATH . '/footer.php' ?>
+        <?php include_once BASE_PATH . '/templates/footer.php' ?>
     </div>
 </body>
 </html>
@@ -85,13 +85,13 @@
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (empty($result)) {
                 http_response_code(404);
-                include_once TEMPLATES_PATH . '/404.php';
+                include_once BASE_PATH . '/templates/404.php';
                 exit();
             }
             $GLOBALS['content'] = decrypt($result[0]['content'], $_SESSION['crypt_key']);
         } else {
             http_response_code(400);
-            include_once TEMPLATES_PATH . '/400.php';
+            include_once BASE_PATH . '/templates/400.php';
             exit();
         }
     }
@@ -108,7 +108,7 @@
             exit();
         } else {
             http_response_code(400);
-            include_once TEMPLATES_PATH . '/400.php';
+            include_once BASE_PATH . '/templates/400.php';
             exit();
         }
     }
