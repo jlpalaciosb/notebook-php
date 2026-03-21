@@ -44,12 +44,6 @@
     <script src="/assets/lib/jquery-3.7.1.min.js"></script>
     <script src="/assets/lib/bootstrap-5.3.8/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/lib/autosize.min.js"></script>
-
-    <script>
-        $(document).ready(function(){
-            autosize($('textarea'));
-        });
-    </script>
 </head>
 <body class="">
     <div class="container py-4">
@@ -89,5 +83,10 @@
         </footer>
     </div>
 
+    <script>
+        $(document).ready(function(){
+            autosize($('textarea'));
+        });
+    </script>
 </body>
 </html>
