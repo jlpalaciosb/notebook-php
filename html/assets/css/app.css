@@ -1,5 +1,7 @@
 body {
-	background-image: url(/assets/img/bg3.svg);
+	background: linear-gradient(
+		190deg, #d1e5e7 0%, #6a9fa8 30%, #205a66 100%
+	);
 	background-attachment: fixed;
 	background-size: cover;
 }

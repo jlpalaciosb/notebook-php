@@ -40,7 +40,7 @@
             <img src="/assets/img/diarioapp2.png" alt="Logo"
             style="margin-bottom: 5px; height: 60px;">
             <form class="cuadro" method="post" action="/user/login.php">
-                <h2>Inicia Sesión</h2>
+                <h2 class="text-center mt-2">Inicia Sesión</h2>
                 <div class="form-group">
                     <label for="username">Nombre de Usuario</label>
                     <input autofocus required class="form-control" type="text" name="user" placeholder="Ingresa tu nombre de usuario" value="<?php echo $user;?>">
