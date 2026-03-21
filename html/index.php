@@ -26,7 +26,6 @@
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-5.3.8/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/loading.css">
 
     <script type="text/javascript" src="/assets/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="/assets/bootstrap-5.3.8/js/bootstrap.bundle.min.js"></script>
@@ -38,7 +37,7 @@
         // Modal strings actualizados para B5 (d-none, data-bs-dismiss, text-end, btn-sm)
         var modal_body0 = '<p class="text-center fs-5">¿Seguro que quieres eliminar tus notas del <br><strong id="span"></strong>?</p>';
         var modal_body1 = '<div class="text-center fs-4"><div class="spinner-border" role="status"><span class="visually-hidden">Cargando...</span></div><p class="mt-2">Eliminando...</p></div>';
-        var modal_body2 = '<p class="text-center fs-4 text-success">Eliminado</p>';
+        var modal_body2 = '<p class="text-center fs-4 text-success">Eliminado!</p>';
         var modal_footer0 = '<button type="button" class="btn btn-danger px-4" onclick="eliminar()">Sí</button> <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">No</button>';
         var modal_footer2 = '<button type="button" class="btn btn-success px-4" data-bs-dismiss="modal">Ok</button>';
 
@@ -130,7 +129,7 @@
                     <thead class="table-light text-muted small text-uppercase">
                         <tr>
                             <th class="ps-3 py-3 fw-bold">Fecha</th>
-                            <th class="pe-3 text-end fw-bold">Acciones</th>
+                            <th class="pe-3 py-3 text-end fw-bold">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -175,7 +174,6 @@
 
         echo '<td class="ps-3 align-middle">';
             if (existsEntry($_SESSION['user'], $date)) {
-                // Actualizado Glyphicon a Bootstrap Icon
                 echo '<i class="bi bi-file-earmark-text text-primary me-2"></i>' . "\n";
                 echo '<a href="/entry/view.php?date=' . $date . '" class="text-decoration-none fw-bold">';
                     echo legibleYMD($anho, $mes, $dia);
@@ -185,22 +183,17 @@
             }
         echo '</td>' . "\n";
 
-        // text-right pasa a text-end
         echo '<td class="pe-3 text-end text-nowrap align-middle">';
                 if (existsEntry($_SESSION['user'], $date)) {
                 echo '<a href="/entry/edit.php?date=' . $date . '">';
-                    // btn-xs pasa a btn-sm
                     echo '<button class="btn btn-sm btn-info text-white me-1">Escribir</button>';
                 echo '</a>' . "\n";
 
-                // Actualizados atributos data-toggle/target a data-bs-toggle/target
                 echo '<button class="btn btn-sm btn-warning" onclick="a_eliminar=\'' . $date . '\';id_eliminar=' . $dia . ';on_show_modal();" data-bs-toggle="modal" data-bs-target="#myModal">';
-                    // Actualizado Glyphicon a Bootstrap Icon
                     echo '<i class="bi bi-trash text-dark"></i>';
                 echo '</button>';
             } else {
                 echo '<a href="/entry/new.php?date=' . $date . '">';
-                    // btn-xs pasa a btn-sm
                     echo '<button class="btn btn-sm btn-info text-white">Escribir</button>' . "\n";
                 echo '</a>' . "\n";
             }
