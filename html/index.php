@@ -24,9 +24,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.7/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/global.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/loading.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
 
     <script type="text/javascript" src="/assets/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/assets/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
@@ -108,12 +107,14 @@
         <!--Fin del Complejo Navegador de Meses, ok no-->
 
         <!--Título de la lista-->
-        <div id="listTitle">
-            <h1 class="outside">
+        <div id="listTitle" style="height: 70px;">
+            <h1 class="text-white float-left mt-4 mb-2">
                 Notas de <?php echo legibleYM($_GET['date']) ?>
             </h1>
-            <a href="/entry/new.php?date=<?php echo getCurrentDate() ?>">
-                <img src="/assets/img/add.png" alt="Escribe tus notas de hoy" title="Escribe tus notas de hoy">
+            <a href="/entry/new.php?date=<?php echo getCurrentDate() ?>"
+            class="float-right mt-4 mb-2" style="height: 39.6px;">
+                <img src="/assets/img/add.png" class="h-100"
+                alt="Escribe tus notas de hoy" title="Escribe tus notas de hoy">
             </a>
             <div class="clearman"></div>
         </div>

@@ -1,5 +1,5 @@
 <div>
-    <p class="outside" style="text-align: center;">
+    <p class="text-white text-center">
         <?php echo '© ' . date('Y') ?>
     </p>
 </div>

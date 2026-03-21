@@ -37,7 +37,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="h-100">
 <head>
     <title>Registro - Anotador</title>
     <meta charset="UTF-8">
@@ -45,13 +45,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.7/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/global.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
 </head>
-<body>
-    <div class="container">
-        <div class="form-container">
-            <img src="/assets/img/diarioapp2.png" alt="Logo" style="margin-bottom: 5px">
+<body class="h-100">
+    <div class="container d-flex align-items-center min-h-100" style="max-width: 400px;">
+        <div class="form-container w-100">
+            <img src="/assets/img/diarioapp2.png" alt="Logo"
+            style="margin-bottom: 5px; height: 60px;">
             <form class="cuadro" method="post" action="/user/register.php">
                 <h2>Crea una cuenta</h2>
                 <div class="form-group">

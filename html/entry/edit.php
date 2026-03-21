@@ -27,8 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.7/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/global.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
 
     <script type="text/javascript" src="/assets/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/assets/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
@@ -57,16 +56,19 @@
         <!--Encabezado-->
         <?php include_once BASE_PATH . '/templates/encabezado.php' ?>
 
-        <h1 class="outside">
+        <h1 class="text-white">
             <?php echo legibleDate($_GET['date']) ?>
         </h1>
         <form class="cuadro" method="post" action="/entry/edit.php">
             <input style="display:none;" type="text" name="date" value="<?php echo $_GET["date"]; ?>">
             <div class="form-group">
                 <label for="content">Escribe tus notas</label>
-                <textarea id="ta" rows="4" name="content" class="form-control"><?php echo $content ?></textarea>
+                <textarea id="ta" rows="4" name="content" class="form-control note-text-area"
+                ><?php echo $content ?></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">Guardar</button>
+            <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">
+                Guardar
+            </button>
         </form>
 
         <!--Footer-->

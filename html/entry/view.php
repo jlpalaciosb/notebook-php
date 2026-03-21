@@ -38,8 +38,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.7/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/global.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
 
     <script type="text/javascript" src="/assets/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/assets/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
@@ -59,12 +58,16 @@
         <!--Encabezado-->
         <?php include_once BASE_PATH . '/templates/encabezado.php' ?>
 
-        <h1 class="outside">
+        <h1 class="text-white">
             <?php echo legibleDate($_GET['date']) ?>
         </h1>
         <div class="cuadro">
-            <textarea readonly id="ta" class="form-control" rows="4"><?php echo $content ?></textarea>
-            <a class="btn btn-primary edit-btn" style="margin-top: 10px" href="<?php echo '/entry/edit.php?date=' . $_GET['date']; ?>">Editar</a>
+            <textarea readonly id="ta" class="form-control note-text-area"
+            rows="4"><?php echo $content ?></textarea>
+            <a class="btn btn-primary edit-btn" style="margin-top: 10px"
+            href="<?php echo '/entry/edit.php?date=' . $_GET['date']; ?>">
+                Editar
+            </a>
         </div>
 
         <!--Footer-->
