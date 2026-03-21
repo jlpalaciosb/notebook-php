@@ -69,7 +69,7 @@
                                     class="form-control border-0 note-text-area fs-5"
                                     style="resize: none;"
                                     rows="5"
-                                    placeholder="Sin notas, prueba editar."><?php echo $content ?></textarea>
+                                    placeholder="Sin notas, prueba editarlo."><?php echo $content ?></textarea>
 
                             <div class="d-flex mt-4">
                                 <a class="btn btn-primary btn-lg px-5 shadow"
