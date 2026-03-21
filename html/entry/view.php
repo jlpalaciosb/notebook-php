@@ -37,13 +37,13 @@
     <title>Ver - Anotador</title>
     <link rel="shortcut icon" type="image/png" href="/assets/img/diarioapp.png"/>
 
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-5.3.8/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/lib/bootstrap-5.3.8/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/lib/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
 
-    <script src="/assets/jquery-3.7.1.min.js"></script>
-    <script src="/assets/bootstrap-5.3.8/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/autosize.min.js"></script>
+    <script src="/assets/lib/jquery-3.7.1.min.js"></script>
+    <script src="/assets/lib/bootstrap-5.3.8/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/lib/autosize.min.js"></script>
 
     <script>
         $(document).ready(function(){

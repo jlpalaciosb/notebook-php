@@ -31,8 +31,8 @@
     <title>Login - Anotador</title>
     <link rel="shortcut icon" type="image/png" href="/assets/img/diarioapp.png"/>
 
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-5.3.8/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/lib/bootstrap-5.3.8/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/lib/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
 </head>
 <body class="d-flex align-items-center py-4 min-vh-100">
@@ -99,6 +99,6 @@
         </div>
     </main>
 
-    <script src="/assets/bootstrap-5.3.8/js/bootstrap.min.js"></script>
+    <script src="/assets/lib/bootstrap-5.3.8/js/bootstrap.min.js"></script>
 </body>
 </html>
