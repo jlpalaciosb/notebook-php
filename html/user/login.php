@@ -74,8 +74,9 @@
                             <?php } ?>
 
                             <div class="d-grid gap-2 mt-4">
-                                <button type="submit" class="btn btn-primary btn-lg">
-                                    Ingresar
+                                <button type="submit" class="btn btn-primary btn-lg d-inline-flex align-items-center justify-content-center">
+                                    <i class="bi bi-box-arrow-in-right me-2"></i>
+                                    <span>Ingresar</span>
                                 </button>
                             </div>
                         </form>
