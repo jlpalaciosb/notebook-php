@@ -118,8 +118,10 @@
 
         <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom border-secondary">
             <h1 class="h3 mb-0 fw-bold text-white">Notas de <?php echo legibleYM($_GET['date']) ?></h1>
-            <a href="/entry/new.php?date=<?php echo getCurrentDate() ?>" class="d-block">
-                <img src="/assets/img/add.png" style="height: 42px; width: 42px;" alt="Escribe tus notas de hoy" title="Escribe tus notas de hoy">
+            <a href="/entry/new.php?date=<?php echo getCurrentDate() ?>" class="d-block" title="Escribe tus notas de hoy">
+                <button class="btn btn-lg btn-info">
+                    <i class="bi bi-pencil text-dark"></i>
+                </button>
             </a>
         </div>
 
