@@ -34,7 +34,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ver - Anotador</title>
+    <title>Ver - Notas</title>
     <link rel="shortcut icon" type="image/png" href="/assets/img/diarioapp.png"/>
 
     <link rel="stylesheet" type="text/css" href="/assets/lib/bootstrap-5.3.8/css/bootstrap.min.css">

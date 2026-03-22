@@ -18,7 +18,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Anotador</title>
+    <title>Notas</title>
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/png" href="/assets/img/diarioapp.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -73,17 +73,20 @@
 
             // Columna de Fecha
             content += '<td class="ps-3 align-middle">';
-            content +=     legibleYMD(a_eliminar);
+            content +=     '<i class="bi bi-file-earmark-text text-secondary me-2"></i> ';
+            content +=     '<span class="text-secondary">';
+            content +=         legibleYMD(a_eliminar);
+            content +=     '</span>';
             content += '</td>';
 
             // Columna de Acciones
-            content += '<td class="pe-3 text-end text-nowrap align-middle">';
-            content +=     '<a href="/entry/new.php?date=' + a_eliminar + '">';
-            content +=         '<button class="btn btn-sm btn-info text-white">Escribir</button>';
+            content += '<td class="pe-3 text-center w-auto text-nowrap align-middle">';
+            content +=     '<a href="/entry/new.php?date=' + a_eliminar + '" title="Anotar">';
+            content +=         '<button class="btn btn-sm btn-info"><i class="bi bi-pencil text-dark"></i></button>';
             content +=     '</a>';
             content += '</td>';
 
-            $("#" + id_eliminar).html(content).addClass('table-light');
+            $("#" + id_eliminar).html(content);
         }
 
         function legibleYMD(ymd) {
@@ -126,7 +129,9 @@
                     <thead class="table-light text-muted small text-uppercase">
                         <tr>
                             <th class="ps-3 py-3 fw-bold">Fecha</th>
-                            <th class="pe-3 py-3 text-end fw-bold">Acciones</th>
+                            <th class="pe-3 py-3 text-center fw-bold" style="width: 1%;">
+                                Acciones
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -176,24 +181,28 @@
                     echo legibleYMD($anho, $mes, $dia);
                 echo '</a>' . "\n";
             } else {
-                echo legibleYMD($anho, $mes, $dia);
+                echo '<i class="bi bi-file-earmark-text text-secondary me-2"></i>' . "\n";
+                echo '<span class="text-secondary">';
+                    echo legibleYMD($anho, $mes, $dia);
+                echo '</span>';
             }
         echo '</td>' . "\n";
 
-        echo '<td class="pe-3 text-end text-nowrap align-middle">';
-                if (existsEntry($_SESSION['user'], $date)) {
-                echo '<a href="/entry/edit.php?date=' . $date . '">';
-                    echo '<button class="btn btn-sm btn-info text-white me-1">Escribir</button>';
-                echo '</a>' . "\n";
-
-                echo '<button class="btn btn-sm btn-warning" onclick="a_eliminar=\'' . $date . '\';id_eliminar=' . $dia . ';on_show_modal();" data-bs-toggle="modal" data-bs-target="#myModal">';
+        echo '<td class="pe-3 text-center w-auto text-nowrap align-middle">';
+            echo '<div class="d-flex justify-content-center">';
+            if (existsEntry($_SESSION['user'], $date)) {
+                echo '<a href="/entry/edit.php?date=' . $date . '" title="Editar">';
+                    echo '<button class="btn btn-sm btn-info"><i class="bi bi-pencil text-dark"></i></button>';
+                echo '</a>';
+                echo '<button class="btn btn-sm btn-warning ms-1" title="Eliminar" onclick="a_eliminar=\'' . $date . '\';id_eliminar=' . $dia . ';on_show_modal();" data-bs-toggle="modal" data-bs-target="#myModal">';
                     echo '<i class="bi bi-trash text-dark"></i>';
                 echo '</button>';
             } else {
-                echo '<a href="/entry/new.php?date=' . $date . '">';
-                    echo '<button class="btn btn-sm btn-info text-white">Escribir</button>' . "\n";
-                echo '</a>' . "\n";
+                echo '<a href="/entry/new.php?date=' . $date . '" title="Anotar">';
+                    echo '<button class="btn btn-sm btn-info"><i class="bi bi-pencil text-dark"></i></button>';
+                echo '</a>';
             }
+            echo '<div>';
         echo '</td>' . "\n";
 
         echo '</tr>' . "\n";
