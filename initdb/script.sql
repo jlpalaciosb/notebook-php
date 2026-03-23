@@ -3,6 +3,7 @@
 CREATE TABLE IF NOT EXISTS users (
 	name VARCHAR(10),
 	password CHARACTER(32) NOT NULL,
+	theme CHARACTER(1),
 	CONSTRAINT pk_users PRIMARY KEY(name)
 );
 

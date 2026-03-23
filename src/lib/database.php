@@ -49,5 +49,14 @@ function authenticate($user, $password) {
     $stmt->bindParam(':p', $password);
     $password = md5($password);
     $stmt->execute();
-    return $stmt->rowCount() == 1;
+    
+    if ($stmt->rowCount() == 1) {
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (isset($row['theme'])) {
+            $_SESSION['theme'] = $row['theme'];
+        }
+        return true;
+    }
+
+    return false;
 }

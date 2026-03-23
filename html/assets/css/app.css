@@ -1,6 +1,16 @@
 body {
+	/* background por defecto, definimos primero */
 	background: linear-gradient(
 		190deg, #d1e5e7 0%, #6a9fa8 30%, #205a66 100%
+	);
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+/* background para modo oscuro */
+[data-bs-theme="dark"] body {
+    background: linear-gradient(
+		190deg, #2a515a 0%, #142d33 40%, #0a1417 100%
 	);
 	background-attachment: fixed;
 	background-size: cover;
@@ -32,4 +42,22 @@ body {
 	border: none !important;
 	box-shadow: none !important;
 	margin-top: 5px;
+}
+
+[data-bs-theme="dark"] .note-text-area {
+	background-image: url("/assets/img/ta-bg-dark.png");
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+/* por defecto, definido primero */
+.table thead th {
+	background-color: var(--bs-light);
+}
+
+/* para tema oscuro */
+[data-bs-theme="dark"] .table thead, [data-bs-theme="dark"] .table thead th {
+	background-color: var(--bs-dark);
 }

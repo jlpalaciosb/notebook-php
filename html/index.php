@@ -16,7 +16,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="<?php echo ($_SESSION['theme'] ?? 'l') === 'd' ? 'dark' : 'light'; ?>">
 <head>
     <title>Notas</title>
     <meta charset="UTF-8">
@@ -128,7 +128,7 @@
         <div class="card login-card overflow-hidden border-0 shadow-lg text-dark bg-white" id="panel">
             <div class="table-responsive">
                 <table class="table table-hover mb-0 align-middle">
-                    <thead class="table-light text-muted small text-uppercase">
+                    <thead class="text-muted small text-uppercase">
                         <tr>
                             <th class="ps-3 py-3 fw-bold">Fecha</th>
                             <th class="pe-3 py-3 text-center fw-bold" style="width: 1%;">
@@ -151,7 +151,7 @@
 
         <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content text-dark border-0 shadow">
+                <div class="modal-content border-0 shadow">
                     <div class="modal-header border-0 pb-0">
                         <h5 class="modal-title fw-bold">Eliminar notas</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

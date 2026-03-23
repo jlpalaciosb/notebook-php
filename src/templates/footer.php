@@ -3,3 +3,5 @@
         &copy; <?php echo date('Y') ?> &middot; Notas
     </p>
 </div>
+
+<?php include_once BASE_PATH . '/templates/theme_switch.php'; ?>

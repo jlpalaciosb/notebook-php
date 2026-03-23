@@ -1,9 +1,12 @@
 <?php
 require_once realpath($_SERVER['DOCUMENT_ROOT'] . '/..') . '/src/bootstrap.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="<?php echo ($_SESSION['theme'] ?? 'l') === 'd' ? 'dark' : 'light'; ?>">
 <head>
     <title>Solicitud Incorrecta - Notas</title>
     <meta charset="UTF-8">
